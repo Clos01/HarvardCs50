@@ -11,7 +11,6 @@ float multiply_float(float num1, float num2);
 int add_ints(int num1, int num2);
 
 int main()
-
 {
 
     // Write a function that would multiply two floating numbers
@@ -23,7 +22,6 @@ int main()
 }
 
 float multiply_float(float num1, float num2)
-
 {
 
     printf("Enter first number for multiplication: ");
@@ -37,7 +35,6 @@ float multiply_float(float num1, float num2)
 }
 
 int add_ints(int num3, int num4)
-
 {
 
     printf("Enter first number for addition: \n");
@@ -45,5 +42,6 @@ int add_ints(int num3, int num4)
     printf("Enter second number for addition: \n");
     scanf("%d", &num4);
     int result = num3 + num4;
-    return result;
+    return result; 
 }
+
