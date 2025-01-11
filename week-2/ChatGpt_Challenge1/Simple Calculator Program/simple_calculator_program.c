@@ -3,15 +3,28 @@
 // Prototype
 void displayMenu();
 int getUserChoice();
-double add(double a, double b);
-
+double add();
+double subtract();
 int main()
 {
-    int userInput;
-    double a,b,result_add;
     displayMenu();
-    getUserChoice();
-    result_add = add(a,b);
+    double userChoice =  getUserChoice();
+    if (userChoice == 1)
+    {
+        add();
+    }
+    else if (userChoice == 2)
+    {
+        subtract();
+    }
+    else if (userChoice == 3)
+    {
+        printf("User Chooses 3");
+    }
+    else if (userChoice == 4)
+    {
+        printf("User Chooses 4");
+    }
     return 0;
 }
 
@@ -41,36 +54,36 @@ int getUserChoice()
 
     scanf("%d", &userInput);
 
-    if (userInput == 1)
-    {
-        printf("User Chooses 1");
-    }
-    else if (userInput == 2)
-    {
-        printf("User Chooses 2");
-    }
-    else if (userInput == 3)
-    {
-        printf("User Chooses 3");
-    }
-    else if (userInput == 4)
-    {
-        printf("User Chooses 4");
-    }
+    
 
     return userInput;
 }
 
-double add(double a, double b)
+double add()
 {
-  double a;
-  double b;
-    double results = a +b; 
-
+    double a, b;
+  
     printf("What number do you choose to add: \n");
     scanf("%lf", &a);
     printf("What is your second number: \n");
-    printf("results: %lf", &results);
+    scanf("%lf", &b);
+
+    double results = a +b;
+    printf("results: %lf", results);
+
+    return results;
+}
+
+double subtract()
+{
+double num1, num2;
+    printf("What number do you choose to subtract: \n");
+    scanf("%lf", &num1);
+    printf("What number do you choose to subtract: \n");
+    scanf("%lf", &num2);
+
+    double results = num1 - num2;
+    printf("results: %lf", results);
 
     return results;
 }
