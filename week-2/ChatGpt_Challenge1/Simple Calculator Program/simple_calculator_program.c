@@ -7,35 +7,55 @@ double add();
 double subtract();
 double getNumber(const char *prompt);
 double performDivision(double num1, double num2);
+char playAgain();
 
 double Division();
 double multiplication();
 int main()
 {
-    displayMenu();
-    double userChoice = getUserChoice();
-    if (userChoice == 1)
-    {
-        add();
-    }
-    else if (userChoice == 2)
-    {
-        subtract();
-    }
-    else if (userChoice == 3)
-    {
+    char replay = 'y'; // Initialize replay to 'y' to enter the loop
 
-        // double getNumber(const char* prompt);
-        // double performDivision(double num1, double num2);
-        Division();
-    }
-    else if (userChoice == 4)
+    while (replay == 'y')
     {
-        multiplication();
+        displayMenu();
+        int userChoice = getUserChoice();
+
+        if (userChoice == 1)
+        {
+            add();
+        }
+        else if (userChoice == 2)
+        {
+            subtract();
+        }
+        else if (userChoice == 3)
+        {
+            Division();
+        }
+        else if (userChoice == 4)
+        {
+            multiplication();
+        }
+        else if (userChoice == 5)
+        {
+            replay = 'y'; // Go back to the menu directly
+        }
+        else if (userChoice == 6)
+        {
+            printf("Exiting... Goodbye!\n");
+            break;
+        }
+        else
+        {
+            printf("Invalid choice! Please try again.\n");
+            continue;
+        }
+
+        replay = playAgain(); // Ask the user if they want to play again
     }
+
     return 0;
 }
-
 // User Selection:
 //  •	Prompt the user to select an option from the menu by entering the corresponding number (1-5).
 
@@ -49,6 +69,9 @@ void displayMenu()
     printf("2. Subtraction\n");
     printf("3. Division\n");
     printf("4. Multiplication\n");
+    printf("5. play Again\n");
+    printf("6. Exit\n");
+
 }
 
 int getUserChoice()
@@ -77,6 +100,7 @@ double add()
     printf("results: %lf", results);
 
     return results;
+    
 }
 
 double subtract()
@@ -142,4 +166,28 @@ double multiplication()
     double results = num1 * num2;
     printf("results: %lf", results);
     return results;
+}
+char playAgain()
+{
+    char answer;
+    // Clear input buffer
+    while (getchar() != '\n'); 
+
+    printf("Do you want to play again? (y/n): ");
+    scanf(" %c", &answer); // Note the space before %c to ignore leading whitespace
+
+    if (answer == 'y' || answer == 'Y')
+    {
+        return 'y'; // Return 'y' to indicate replay
+    }
+    else if (answer == 'n' || answer == 'N')
+    {
+        printf("Thank you for using the calculator!\n");
+        return 'n'; // Return 'n' to indicate exit
+    }
+    else
+    {
+        printf("Invalid input. Exiting...\n");
+        return 'n';
+    }
 }
