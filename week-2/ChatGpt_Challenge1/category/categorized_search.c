@@ -3,7 +3,7 @@
 
 // Function declarations
 void displayMessage(char usrInput[]);
-char* displayMessageLogic(char usrInput[]);
+void displayMessageLogic(char usrInput[]);
 int main()
 {
     //declaring an array to store user input 
@@ -26,7 +26,8 @@ void displayMessage(char usrInput[]) {
 
 //check logic for displayMessage
 
-char* displayMessageLogic(char usrInput[])
+void displayMessageLogic(char usrInput[])
 {
  printf("You entered: %s\n", usrInput);  
+
 }
