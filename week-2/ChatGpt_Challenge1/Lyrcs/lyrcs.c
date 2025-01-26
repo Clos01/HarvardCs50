@@ -1,39 +1,54 @@
 
 #include <stdio.h>
+
 #include <string.h>
 
+#include "DTMFLyrcs.c"
 // Thoughts for this..... dont know yet but will be making it fun
 // song for freestyle
 
-char* displayMessageForUsr();
+void displayMessageForUsr();
+
 int getUsrInput();
+
 int validateUserInput(int target, int arrayForSelections[], int sizeOfArray);
-int validationLogicPrintToUser(int  validationResult);
+
+int validationReturn(int validationResult);
+
+void printingLyrics(int valiDateLogic);
+void displaySongWithLyrics(int valiDateLogic);
 
 int main()
 {
-    char* displaymessage = displayMessageForUsr();
-    
+    // Will Display message to terminal
+    displayMessageForUsr();
+
+    // will be put in the terminal for displaying the song number.
+    // Next line will be taking the array size and making sure that it gets divided by the length of it and how much a byte it will be based on the value of the element (INT) could be 4 bytes 4*3 = 12 then 12 / 4 = 3. Means 3 elements in the array
     int arrayForSelections[] = {1, 2, 3};
-    
     int sizeOfArray = sizeof(arrayForSelections) / sizeof(arrayForSelections[0]);
-    
-    char* arrayForSongs[] = {"DTMF"};
 
+    // Determining the name of the Song
+    // Second line does the same thing, Verifying elements in the array
+    char *arrayForSongs[] = {"DTMF"};
     int sizeOfArrayForSong = sizeof(arrayForSongs) / sizeof(arrayForSongs[0]);
-    
-    int target = getUsrInput();
-    
-    int validationResult = validateUserInput(target, arrayForSelections, sizeOfArray);
-    int validateLogic = validationLogicPrintToUser(validationResult);
 
-    
+
+    // Getting the number from the user. Takes that function from the user and is able to be assigned to a variable called 'target'
+    int target = getUsrInput();
+
+    // Function to iterate through the 'arrayForSelections' and check it along side the target
+    int validationResult = validateUserInput(target, arrayForSelections, sizeOfArray);
+
+    // Collection of ValidationResult to display conformation
+    int valiDateLogic = validationReturn(validationResult);
+
+    displaySongWithLyrics(valiDateLogic);
+
     return 0;
 }
 
-
-
-char* displayMessageForUsr()
+void displayMessageForUsr()
 {
     printf("\n");
     printf("--------------------------------\n");
@@ -44,7 +59,8 @@ char* displayMessageForUsr()
     printf("--------------------------------\n");
     printf("\n");
 
-    printf("1: DTMF Bad Bunny \n");
+    printf("1: Song 1 - DTMF\n");
+
     printf("\n");
 }
 
@@ -52,74 +68,62 @@ int getUsrInput()
 {
     printf("\n");
     int getNumber;
+    scanf("%d", &getNumber);
     printf("Great Selection! ");
 
-    scanf("%d", &getNumber);
     printf("Number: %d\n", getNumber);
 
     return getNumber;
 }
 
-//validate user input 
+// validate user input
 
 int validateUserInput(int target, int arrayForSelections[], int sizeOfArray)
 {
-    for(int i = 0; i < sizeOfArray; i++)
+    for (int i = 0; i < sizeOfArray; i++)
     {
-        if(arrayForSelections[i] == target)
+        if (arrayForSelections[i] == target)
         {
             return i;
         }
     }
+
     return -1;
 }
 
-
-int validationLogicPrintToUser(int  validationResult)
+int validationReturn(int validationResult)
 {
-    if(validationResult != -1)
+    if (validationResult != -1)
     {
         printf("Found it!\n ");
-    }  
-    else 
+        return validationResult;
+    }
+    else
     {
         printf("Not Found\n");
     }
     return -2;
 }
 
-
-int pickingSong(int validDateLogic, char* arrayForSongs[], int sizeOfArrayForSong  )
+void printingLyrics(int valiDateLogic)
 {
-    for(int i = 0; i < sizeOfArrayForSong; i++)
+    if (valiDateLogic != 1)
     {
-        if(arrayForSongs[i] == validDateLogic)
-        {
-            return i;
-        }
+        displaySongWithLyrics(valiDateLogic);
+    }else {
+        printf("Invalid choice. Please restart the program and choose a valid book.\n");
     }
-    return -3;
-
 }
 
-
-void printSongName(int validateLogic, int )
+void displaySongWithLyrics(int valiDateLogic)
 {
-   if( validateLogic != -3 ){
-    printf("Hey nice song choice, you have chosen %d",  );
-   }
+    switch (valiDateLogic)
+    {
+    case 0:
+        printf("%s\n", dtmfLyrics);
+        break;
+
+    default:
+        break;
+    }
 }
-
-
-
-// i am kinda lost but not really i know that a user has to choose a song right by typing in a number but that means that, that number has to be assigned to the array index?
-
-// How can i assign a number to the index array? Do i need to even do that?
-
-// i think yes because 1 could be 0 in the index and so on but that can get confusing real quick?
-
-// i think no because of that issue
-
-// So how do i do this?
-
-//
