@@ -4,6 +4,7 @@
 #include <string.h>
 
 #include "DTMFLyrcs.c"
+#include "TitMePreguntoLyrics.c"
 // Thoughts for this..... dont know yet but will be making it fun
 // song for freestyle
 
@@ -30,7 +31,7 @@ int main()
 
     // Determining the name of the Song
     // Second line does the same thing, Verifying elements in the array
-    char *arrayForSongs[] = {"DTMF"};
+    char *arrayForSongs[] = {"DTMF", "Titi Me Pregunto"};
     int sizeOfArrayForSong = sizeof(arrayForSongs) / sizeof(arrayForSongs[0]);
 
 
@@ -59,7 +60,8 @@ void displayMessageForUsr()
     printf("--------------------------------\n");
     printf("\n");
 
-    printf("1: Song 1 - DTMF\n");
+    printf("1: Song 1 - DTMF By Bad Bunny\n");
+    printf("2: Song 2 - Titi Me Pregunto By Bad Bunny\n");
 
     printf("\n");
 }
@@ -122,7 +124,9 @@ void displaySongWithLyrics(int valiDateLogic)
     case 0:
         printf("%s\n", dtmfLyrics);
         break;
-
+    case 1:
+printf("%s\n", titiMePreguntoLyrics);
+    break;
     default:
         break;
     }

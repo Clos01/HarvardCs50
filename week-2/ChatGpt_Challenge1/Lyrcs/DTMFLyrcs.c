@@ -2,8 +2,7 @@
 #include <string.h>
 #include "DTMFLyrcsHolder.h"
 
-
- const char dtmfLyrics[] = 
+const char dtmfLyrics[] = 
     "Eh-eh, eh-eh, eh-eh, eh-eh\n\n"
     "Otro sunset bonito que veo en San Juan\n"
     "Disfrutando de todas esas cosas que extrañan los que se van\n"
