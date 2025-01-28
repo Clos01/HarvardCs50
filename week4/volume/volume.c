@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
     // Open files and determine scaling factor
     FILE *input = fopen(argv[1], "r");
     if (input == NULL)
-    
+
     {
         printf("Could not open file.\n");
         return 1;
@@ -35,6 +35,9 @@ int main(int argc, char *argv[])
     float factor = atof(argv[3]);
 
     // TODO: Copy header from input file to output file
+    uint8_t header[HEADER_SIZE];
+    fread(header, HEADER_SIZE, 1, input);
+    fwrite(header, HEADER_SIZE, 1, output);
 
     // TODO: Read samples from input file and write updated data to output file
 
