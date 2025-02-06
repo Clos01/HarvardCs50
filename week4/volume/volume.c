@@ -3,7 +3,7 @@
 #include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
-
+#include <string.h>
 // Number of bytes in .wav header
 const int HEADER_SIZE = 44;
 
@@ -40,8 +40,11 @@ int main(int argc, char *argv[])
     fwrite(header, HEADER_SIZE, 1, output);
 
     // TODO: Read samples from input file and write updated data to output file
+    int sizeOfAudioWave ;
+    memcpy(&sizeOfAudioWave, header, 4);
 
     // Close files
     fclose(input);
     fclose(output);
+    
 }
