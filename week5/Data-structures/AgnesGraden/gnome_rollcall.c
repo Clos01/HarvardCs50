@@ -13,11 +13,20 @@ struct  Gnome
 
 int main()
 {
+    char *gnomes[5] = {"Bartholomew", "Gerturde", "Horace", "Beatrice", "Cecil"};
+    
     struct Gnome Bartholomew; 
     struct Gnome Gerturde;
     struct Gnome Horace;
     struct Gnome Beatrice;
     struct  Gnome Cecil;
-    char *gnomes[5] = {"Bartholomew", "Gerturde", "Horace", "Beatrice", "Cecil"};
+
+    //? Bartholmew
+    strcpy(Bartholomew.gnomeName, "Bartholomew");
+    strcpy(Bartholomew.gnomeHatColor, "Red");
+    strcpy(Bartholomew.gnomeLocation, "Square Town");
+    Bartholomew.gnomeRebel = false;
+
+
     
 }
