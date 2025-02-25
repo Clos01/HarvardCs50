@@ -3,7 +3,7 @@
 #include "TitiMePregutno.h"
 
 char titiMePreguntoLyrics[] = 
-    "Tití me preguntó si tengo muchas novia'\n"
+    "\nTití me preguntó si tengo muchas novia'\n"
     "Muchas novia', hoy tengo a una, mañana a otra, ey\n"
     "Pero no hay boda, tití me preguntó si tengo muchas novia'\n"
     "Muchas novia', hoy tengo a una, mañana a otra\n"

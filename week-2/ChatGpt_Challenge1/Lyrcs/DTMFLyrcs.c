@@ -1,9 +1,10 @@
-#include <stdio.h>
-#include <string.h>
-#include "DTMFLyrcsHolder.h"
+#include <stdio.h>  // Standard input-output library for printing lyrics
+#include <string.h> // String library for handling text manipulation
+#include "DTMFLyrcsHolder.h" // Header file that declares the `dtmfLyrics` variable
+
 
 const char dtmfLyrics[] = 
-    "Eh-eh, eh-eh, eh-eh, eh-eh\n\n"
+    "\nEh-eh, eh-eh, eh-eh, eh-eh\n\n"
     "Otro sunset bonito que veo en San Juan\n"
     "Disfrutando de todas esas cosas que extrañan los que se van\n"
     "Disfrutando de noche' de esas que ya no se dan\n"
@@ -65,4 +66,4 @@ const char dtmfLyrics[] =
     "Y si hoy me emborracho, que Beno me ayude\n";
 
 
-// Function to print the entire article
+

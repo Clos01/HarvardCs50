@@ -19,10 +19,13 @@ numbers[i] = numbers[i-1] * 2;
     
     for (int i =0; i < 5; i++)
     {
-        printf("%d\n", numbers[i]);
+        printf("%d\n", numbers[i]); 
+        
     }
 
 
 
 return 0;
 }
+
+//

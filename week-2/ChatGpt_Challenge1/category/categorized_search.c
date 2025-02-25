@@ -9,8 +9,9 @@ void searchingCategoryLogic(char usrInput[], char *Math[], int MathLength, char 
 int main()
 {
     // Declaring arrays for categories
+    //adjust *
     char *Math[] = {"Algebra", "Calculus", "Geometry", "Statistics", "Trigonometry", "Linear Algebra"};
-    char *Science[] = {"Biology", "Chemistry", "Physics", "Astronomy", "Geology", "Environmental Science"};
+    char* Science[] = {"Biology", "Chemistry", "Physics", "Astronomy", "Geology", "Environmental Science"};
     char *Literature[] = {"Hamlet", "Macbeth", "The Odyssey", "The Great Gatsby", "Pride and Prejudice", "1984"};
 
     // Calculate lengths of the arrays
