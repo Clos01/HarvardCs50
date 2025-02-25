@@ -27,6 +27,23 @@ int main()
     strcpy(Bartholomew.gnomeLocation, "Square Town");
     Bartholomew.gnomeRebel = false;
 
+    //? Gertrude 
+    strcpy(Gerturde.gnomeName, "Gerturde");
+    strcpy(Gerturde.gnomeHatColor, "Blue");
+    strcpy(Gerturde.gnomeLocation, "Square Town");
+    Gerturde.gnomeRebel = false;
+
+    //? Horace 
+    strcpy(Horace.gnomeName, "Horace");
+    strcpy(Horace.gnomeHatColor, "Green");
+    strcpy(Horace.gnomeLocation, "Square Town");
+    Horace.gnomeRebel = false;
+
+    //? Beatrice 
+    strcpy(Beatrice.gnomeName, "Beatrice");
+    strcpy(Beatrice.gnomeHatColor, "Yellow");
+    strcpy(Beatrice.gnomeLocation, "Square Town");
+    Beatrice.gnomeRebel = false;
 
     
 }
