@@ -8,42 +8,45 @@ struct  Gnome
     char gnomeName[50];
     char gnomeHatColor[50];
     char gnomeLocation[50];
-    bool gnomeRebel; 
+    bool rebellious; 
 };  
 
 int main()
 {
-    char *gnomes[5] = {"Bartholomew", "Gerturde", "Horace", "Beatrice", "Cecil"};
-    
-    struct Gnome Bartholomew; 
-    struct Gnome Gerturde;
-    struct Gnome Horace;
-    struct Gnome Beatrice;
-    struct  Gnome Cecil;
+    struct Gnome agnesGnomes[4];
+
 
     //? Bartholmew
-    strcpy(Bartholomew.gnomeName, "Bartholomew");
-    strcpy(Bartholomew.gnomeHatColor, "Red");
-    strcpy(Bartholomew.gnomeLocation, "Square Town");
-    Bartholomew.gnomeRebel = false;
+    strcpy(agnesGnomes[0].gnomeName, "Bartholomew");
+    strcpy(agnesGnomes[0].gnomeHatColor, "Red");
+    strcpy(agnesGnomes[0].gnomeLocation, "Square Town");
+    agnesGnomes[0].rebellious = true;
 
     //? Gertrude 
-    strcpy(Gerturde.gnomeName, "Gerturde");
-    strcpy(Gerturde.gnomeHatColor, "Blue");
-    strcpy(Gerturde.gnomeLocation, "Square Town");
-    Gerturde.gnomeRebel = false;
+    strcpy(agnesGnomes[1].gnomeName, "Gerturde");
+    strcpy(agnesGnomes[1].gnomeHatColor, "Blue");
+    strcpy(agnesGnomes[1].gnomeLocation, "Square Town");
+    agnesGnomes[1].rebellious = false;
 
     //? Horace 
-    strcpy(Horace.gnomeName, "Horace");
-    strcpy(Horace.gnomeHatColor, "Green");
-    strcpy(Horace.gnomeLocation, "Square Town");
-    Horace.gnomeRebel = false;
+    strcpy(agnesGnomes[2].gnomeName, "Horace");
+    strcpy(agnesGnomes[2].gnomeHatColor, "Green");
+    strcpy(agnesGnomes[2].gnomeLocation, "Square Town");
+    agnesGnomes[2].rebellious = false;
 
     //? Beatrice 
-    strcpy(Beatrice.gnomeName, "Beatrice");
-    strcpy(Beatrice.gnomeHatColor, "Yellow");
-    strcpy(Beatrice.gnomeLocation, "Square Town");
-    Beatrice.gnomeRebel = false;
+    strcpy(agnesGnomes[3].gnomeName, "Beatrice");
+    strcpy(agnesGnomes[3].gnomeHatColor, "Yellow");
+    strcpy(agnesGnomes[3].gnomeLocation, "Square Town");
+    agnesGnomes[3].rebellious = false;
 
-    
+      // 3. Mark Horace and Beatrice as rebellious (after initializing the array)
+    agnesGnomes[2].rebellious = true; // Horace is at index 2 (0, 1, 2...)
+    agnesGnomes[3].rebellious = true; // Beatrice is at index 3
+
+    for(int i = 0; i < 5; i++ )
+    {
+        printf("Gnome Name: %s\n, Rebellious %s\n", agnesGnomes[i].gnomeName, agnesGnomes[i].rebellious ? "True" : "False");
+    }
+    return 0;
 }
